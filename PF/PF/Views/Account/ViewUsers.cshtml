@@ -1,0 +1,61 @@
+﻿@model List<PF.Models.UsersModel>
+
+@{
+    ViewBag.Title = "ViewUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-controller="usersController">
+    <script type="text/javascript">
+        var model = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(this.Model));
+        app.value("viewModel", model);
+    </script>
+    <div class="well-row ">
+        <div class="well row col-md-24">
+            <div class="well-row col-md-24">
+                <p class="h4"><b>Список пользователей</b></p>
+            </div>
+
+            <table cellpadding="3" class="table table-bordered table-hover col-md-24">
+                <thead>
+                    <tr>
+                        <td><b>Код</b></td>
+                        <td><b>LogIn</b></td>
+                        <td><b>Password</b></td>
+                        <td><b>FirstName</b></td>
+                        <td><b>LastName</b></td>
+                        <td><b>Действие</b></td>
+                    </tr>
+                </thead>
+
+                <tr ng-repeat="user in users">
+                    <td>{{user.role_id}}</td>
+                    <td>
+                        <input type="text" ng-model="user.login" value={{user.login}} style="width:100%" />
+                    </td>
+                    <td>
+                        <input type="text" ng-model="user.password" value={{user.password}} style="width:100%" />
+                    </td>
+                    <td>
+                        <input type="text" ng-model="user.firstname" value={{user.firstname}} style="width:100%" />
+                    </td>
+                    <td>
+                        <input type="text" ng-model="user.lastname" value={{user.lastname}} style="width:100%" />
+                    </td>
+                    <td>
+                        <span ng-click="update(user, $index)" class="btn btn-default">Сохранить</span>
+                        <span ng-click="delete(user.id)" class="btn btn-danger">Удалить</span>
+                    </td>
+                </tr>
+            </table>
+            <div class="well-row col-md-2">
+                <span ng-click="add(name)" type="button" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

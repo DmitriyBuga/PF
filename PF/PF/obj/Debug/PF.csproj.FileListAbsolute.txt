@@ -52,3 +52,5 @@ D:\VSPrj\PF\PF\bin\ru\System.Web.Mvc.resources.dll
 D:\VSPrj\PF\PF\obj\Debug\PF.csprojResolveAssemblyReference.cache
 D:\VSPrj\PF\PF\obj\Debug\PF.dll
 D:\VSPrj\PF\PF\obj\Debug\PF.pdb
+D:\VSPrj\PF\PF\bin\ru\EntityFramework.resources.dll
+D:\VSPrj\PF\PF\bin\ru\EntityFramework.SqlServer.resources.dll

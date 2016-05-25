@@ -12,7 +12,8 @@ namespace PF.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using System.Linq;
+
     public partial class DB_PensEntities : DbContext
     {
         public DB_PensEntities()
@@ -27,5 +28,6 @@ namespace PF.Models
     
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public IQueryable<Role> Roles { get; internal set; }
     }
 }

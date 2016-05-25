@@ -124,6 +124,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular\Controller.js" />
+    <Content Include="Angular\Directives.js" />
+    <Content Include="Angular\Filter.js" />
+    <Content Include="Angular\Module.js" />
+    <Content Include="Angular\Service.js" />
     <Content Include="Bootstrap_Styles\Css\styles.css" />
     <Content Include="Bootstrap_Styles\Css\variables.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -953,6 +958,8 @@
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\version.json" />
   </ItemGroup>
@@ -960,12 +967,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\PensFondController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\AutofacConfig.cs" />
     <Compile Include="Models\Abstract\IRepository.cs" />
-    <Compile Include="Models\Concrete\EFDBContext.cs" />
     <Compile Include="Models\Concrete\EFRepository.cs" />
     <Compile Include="Models\DBPens.Context.cs">
       <AutoGen>True</AutoGen>
@@ -982,18 +989,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBPens.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\LogViewModel.cs" />
+    <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\Role.cs">
       <DependentUpon>DBPens.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.cs">
       <DependentUpon>DBPens.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UsersModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\PFRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\ViewUsers.cshtml" />
+    <Content Include="Views\PensFond\Table.cshtml" />
+    <Content Include="Scripts\underscore.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1006,7 +1023,6 @@
     <Folder Include="Bootstrap_Styles\Fonts\" />
     <Folder Include="Bootstrap_Styles\Less\" />
     <Folder Include="Models\Entities\" />
-    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
